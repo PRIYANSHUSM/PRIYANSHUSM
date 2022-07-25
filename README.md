@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @PRIYANSHUSM
 - 👀 I’m interested in coding
-- 🌱 I’m currently learning python and web development
+- 🌱 I’m currently learning python and web development and also have a great interest in Machine learning and data science
 - 💞️ I’m looking to collaborate on development
 - 📫 How to reach me dm
 
