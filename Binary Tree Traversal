@@ -1,0 +1,44 @@
+from collections import deque
+class Node:
+    def __init__(self,data,left=None,right=None):
+        self.data = data
+        self.left = left
+        self.right = right
+
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.data)
+        inorder(root.right)
+def preorder(root):
+    if root:
+        print(root.data)
+        
+        inorder(root.left)
+        
+        inorder(root.right)
+def postorder(root):
+    if root:
+        inorder(root.left)
+        inorder(root.right)
+        print(root.data)
+def levelorder(root):
+    q = deque([root])
+    while q:
+        x = q.pop()
+        print(x.data)
+        if x.left:
+            q.appendleft(x.left)
+        if x.right:
+            q.appendleft(x.right)
+            
+
+        
+a = Node("a",Node("b",Node("c"),Node("d")),Node("e",Node("f"),Node("g")))
+inorder(a)
+print("***************")
+preorder(a)
+print("****************")
+postorder(a)
+print("****************")
+levelorder(a)
