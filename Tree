@@ -1,0 +1,81 @@
+class Tree:
+    def __init__(self,data):
+        self.data = data
+        self.left = None
+        self.right = None
+        
+        
+    def addNode(self,data):
+        if self.data:
+            if data < self.data:
+                if self.left is None:
+                    self.left = Tree(data)
+                else:
+                    self.left.addNode(data)
+                    
+            else:
+                if self.right is None:
+                    self.right = Tree(data)
+                else:
+                    self.right.addNode(data)
+                    
+        else:
+            if data:
+                self.data = data
+            else:
+                print("data is None")
+                
+    
+    def printTree(self):
+        print_tree = []
+        if self.left:
+            print_tree += self.left.printTree()
+        print_tree.append(self.data)
+        if self.right:
+            print_tree+= self.right.printTree()
+            
+        return print_tree
+        
+    def search(self,data):
+        if self.data == data:
+            print("data Found")
+            return
+        
+        elif data < self.data:
+            if self.left is not None:
+                if self.left.data == data:
+                    print("data Found")
+                    return
+                else:
+                    self.left.search(data)
+            else:
+                print("No data Exist")
+                return
+        
+        elif self.right is not None:
+            if self.right.data == data:
+                print("data Found")
+                return
+            else:
+                self.right.search(data)
+                
+        else:
+            print("No data Exist")
+            return
+           
+                
+            
+        
+tree = Tree(1)
+tree.addNode(5)
+tree.addNode(3)
+tree.addNode(4)
+tree.addNode(2)
+print(tree.printTree())
+tree.search(1)
+tree.search(2)
+tree.search(3)
+tree.search(4)
+tree.search(5)
+tree.search(6)
+tree.search(7)
