@@ -1,0 +1,79 @@
+from collections import deque
+
+class Tree:
+    def __init__(self,val=0,left = None,right = None):
+        self.val = val
+        self.right = right
+        self.left = left
+        
+    
+
+def bfs(root):
+    if not root:
+        return []
+    queue = deque([root])
+    ans = []
+    while queue:
+        level_count = len(queue)
+        level_res = []
+        for _ in range(level_count):
+            node = queue.popleft()
+            level_res.append(node.val)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        ans.append(level_res) 
+            
+    return ans
+ 
+def dfs(root):
+    if not root:
+        return []
+        
+    stack = []
+    ans = []
+    stack.append(root)
+    
+    while stack:
+        node = stack.pop()
+        ans.append(node.val)
+        if node.right:
+            stack.append(node.right)
+            
+        if node.left:
+            stack.append(node.left)
+            
+    return ans
+ 
+ 
+def bfs_with_recursion(queue,ans):
+    if not queue:
+        return ans
+        
+    level_count = len(queue)
+    level_result = []
+    for _ in range(level_count):
+        node = queue.popleft()
+        level_result.append(node.val)
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+    
+    ans.append(level_result)
+    return bfs_with_recursion(queue,ans)
+ 
+ 
+    
+tree = Tree(2,Tree(5),Tree(1,Tree(6),Tree(3)))
+
+print(bfs(tree))
+
+queue = deque([tree])
+ans = []
+print(bfs_with_recursion(queue,ans))
+
+    
+
+        
