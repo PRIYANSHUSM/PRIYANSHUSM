@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @PRIYANSHUSM
 - 👀 I’m interested in coding
-- 🌱 I’m currently working a Software Engineer and have great sound knowledge in python and development, I have integrated new technology like gen AI and data quality with the distributed system.
+- 🌱 I’m currently working a Software Engineer and have great sound knowledge in python and development, I have integrated new technology like gen AI with the distributed system and microservices.
 - 💞️ I’m looking to collaborate on development
 - 📫 How to reach me dm
 
